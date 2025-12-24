@@ -86,7 +86,7 @@ describe('XPOK', () => {
         expect(isLotteryStartedc).toBe(false);
     });
 
-    it.skip('should buy tickets', async () => {
+    it('should buy tickets', async () => {
         // initialize season at first
         const initSeason = await xpok.send(
             deployer.getSender(),

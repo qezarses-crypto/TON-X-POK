@@ -93,6 +93,13 @@ contract XPOK {
 
         self.additionalJettonWalletAddress = owner;
         self.additionalJettonMasterAddress = owner;
+
+        message(MessageParameters{ 
+            to: self.pokJettonMasterAddress,
+            value: 0,
+            mode: SendRemainingValue,
+            body: ProvideWalletAddress{query_id: now(), owner_address: myAddress(), include_address: false}.toCell()
+        });
     }
 
     receive(){}
